@@ -1,4 +1,4 @@
-import csv
+import random
 import numpy as np
 
 class Kitty:
@@ -11,15 +11,11 @@ class Kitty:
 
     def giveAttributes(self):
         self.name = input("Enter the cat's name : ")
-
-#cat1 = Kitty("kumar", 0.5, 90, "happy")
-#cat1Data = [cat1.name, cat1.hunger, cat1.health, cat1.mood]
-
-
-#np.savetxt('data.csv', cat1Data, delimiter='\t',fmt="%s")
-#dat = np.genfromtxt('data.csv', delimiter=',', dtype=str)
-
-#print(dat)
+        self.hunger = random.randrange(10,50)
+        self.health = random.randrange(30,80)
+        data = [self.name, self.hunger, self.health]
+        np.savetxt('c1Data.csv', data, fmt="%s")
+    
 
 print("Welcome to Vir-Cat!!")
 
@@ -29,6 +25,7 @@ if choice == 1:
     c1.giveAttributes()
 else:
     exit()
+
 
 
 
