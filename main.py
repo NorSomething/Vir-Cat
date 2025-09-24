@@ -45,9 +45,23 @@ class Kitty:
 
             if i == 1:
                 c1.getAttributes()
+            elif i == 2:
+                c1.feedFood()
             if i == 4:
                 exit()
     
+    def feedFood(self):
+        #read all lines
+        with open('c1Data.csv', 'r') as f:
+            lines = f.readlines()
+
+        lines[1] = str(int(lines[1])+20) + "\n"
+
+        #write all lines back
+        with open('c1Data.csv', 'w') as f:
+            f.writelines(lines)
+
+
 
 print("Welcome to Vir-Cat!!")
 
